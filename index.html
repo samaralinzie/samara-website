@@ -1,60 +1,119 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ask Samara</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    .box {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+    textarea, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: deeppink;
+    }
+  </style>
+</head>
+<body>
+
 <audio autoplay loop>
   <source src="assets/music.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
 <div style="background-color: #fce4ec; padding: 10px; text-align: center;">
   Template Source: 
   <a href="https://github.com/StartBootstrap/startbootstrap-resume" target="_blank">
     StartBootstrap Resume on GitHub
   </a>
 </div>
-  <script>
-    // This JS runs only on the index page
-    alert("Welcome to my website!");
-  </script>
-    <!-- Subtle Volume Reminder -->
-<div style="
-  padding: 8px 0;
-  text-align: center;
-  font-family: 'Saira Extra Condensed', sans-serif;
-  font-size: 1.05rem;
-  color: hotpink;
-  font-weight: 600;
-  margin-top: 30px;
-">
+
+<script>
+  alert("Welcome to my website!");
+</script>
+
+<div style="text-align: center; font-weight: bold; margin-top: 20px; color: hotpink;">
   Turn up your volume for max experience!
 </div>
 
-<!-- Ask Samara Box -->
-<div style="max-width: 500px; margin: 10px auto 0 auto; text-align: center; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-  <h3 style="margin-bottom: 15px;">Ask Samara!</h3>
-  <input type="text" id="questionInput" placeholder="Ask me something..." style="padding: 10px; width: 100%; border-radius: 6px; border: 1px solid #ccc;">
-  <br><br>
-  <button onclick="answerQuestion()" style="padding: 10px 20px; background-color: pink; color: white; border: none; border-radius: 6px; cursor: pointer; width: 100%;">Ask</button>
-  <p id="answerOutput" style="margin-top: 15px; font-weight: bold; color: #444;"></p>
+<div class="box">
+  <h3>Ask Samara!</h3>
+  <form id="questionForm">
+    <input type="text" id="questionInput" name="question" placeholder="Ask me something..." required>
+    <button type="submit">Ask</button>
+  </form>
+  <p id="answerOutput" style="margin-top: 15px; font-weight: bold;"></p>
 </div>
-  </div>
+
 <script>
-    const form = document.getElementById('questionForm');
+  const form = document.getElementById('questionForm');
+  const answerOutput = document.getElementById('answerOutput');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const question = document.getElementById('question').value;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const q = document.getElementById("questionInput").value.trim();
+    const lower = q.toLowerCase();
 
-      fetch('https://script.google.com/macros/s/AKfycbz1MoClyVm9F1LFofgBsnktNSDoCyVYjhWCHg7yY28MlkBnweS4reqA2X0NhD8IZPP0Dw/exec' {
-        method: 'POST',
-        body: new URLSearchParams({ question })
-      })
-      .then(() => {
-        alert('Thank you for the questions');
-        form.reset();
-      })
-      .catch(() => {
-        alert('Error');
-      });
+    // Smart answers
+    if (lower.includes("hobby")) {
+      answerOutput.textContent = "I love playing games!";
+    } else if (lower.includes("food")) {
+      answerOutput.textContent = "Tuna pasta all the way!";
+    } else if (lower.includes("goal") || lower.includes("dream")) {
+      answerOutput.textContent = "I want to be rich!";
+    } else if (lower.includes("school") || lower.includes("uni") || lower.includes("college") || lower.includes("study")) {
+      answerOutput.textContent = "I'm currently studying at Tokyo International University.";
+    } else if (lower.includes("old") || lower.includes("age")) {
+      answerOutput.textContent = "I am 19 years old.";
+    } else if (lower.includes("color") || lower.includes("colour")) {
+      answerOutput.textContent = "My favorite color is purple!";
+    } else if (lower.includes("name") || lower.includes("who are you") || lower.includes("your name")) {
+      answerOutput.textContent = "My name is Samara Linzie.";
+    } else if (lower.includes("major") || lower.includes("what do you study") || lower.includes("what is your major")) {
+      answerOutput.textContent = "I am majoring in International Relations.";
+    } else {
+      answerOutput.textContent = "That's a great question!";
+    }
+
+    // Send to Google Sheets
+    fetch('https://script.google.com/macros/s/AKfycbz1MoClyVm9F1LFofgBsnktNSDoCyVYjhWCHg7yY28MlkBnweS4reqA2X0NhD8IZPP0Dw/exec', {
+      method: 'POST',
+      body: new URLSearchParams({ question: q })
+    })
+    .then(() => {
+      console.log('Question submitted.');
+    })
+    .catch(() => {
+      alert('There was a problem saving your question.');
     });
-  </script>
+
+    form.reset();
+  });
+</script>
 </section>
 </div>
 <script>
