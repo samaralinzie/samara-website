@@ -75,6 +75,7 @@
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
     const q = document.getElementById("questionInput").value.trim();
     const lower = q.toLowerCase();
 
@@ -95,8 +96,14 @@
       answerOutput.textContent = "My name is Samara Linzie.";
     } else if (lower.includes("major") || lower.includes("what do you study") || lower.includes("what is your major")) {
       answerOutput.textContent = "I am majoring in Digital Business and Innovation.";
+    } else if (lower.includes("crush")) {
+      answerOutput.textContent = "bruh no one, why do you wanna know?";
+    } else if (lower.includes("movie")) {
+      answerOutput.textContent = "Currently I love Kpop Demon Hunter on Netflix.";
+    } else if (q === "") {
+      answerOutput.textContent = "Type something first!";
     } else {
-      answerOutput.textContent = "hmm I currently don't have the answer you asked for, why don't you ask my age, hobby, or goals instead!";
+      answerOutput.textContent = "Sorry, I don't have an answer for that. Try asking about my hobbies, favorite food, goals, or school!";
     }
 
     // Send to Google Sheets
@@ -105,15 +112,16 @@
       body: new URLSearchParams({ question: q })
     })
     .then(() => {
-      console.log('Thanks for the question');
+      console.log('Idk how to answer that');
     })
     .catch(() => {
-      alert('Uh oh don't mind this hehe');
+      alert('Uh oh, something went wrong.');
     });
 
     form.reset();
   });
 </script>
+
 </section>
 </div>
 <script>
