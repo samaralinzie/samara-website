@@ -35,6 +35,26 @@
   <p id="answerOutput" style="margin-top: 15px; font-weight: bold; color: #444;"></p>
 </div>
   </div>
+<script>
+    const form = document.getElementById('questionForm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const question = document.getElementById('question').value;
+
+      fetch('https://script.google.com/macros/s/AKfycbz1MoClyVm9F1LFofgBsnktNSDoCyVYjhWCHg7yY28MlkBnweS4reqA2X0NhD8IZPP0Dw/exec' {
+        method: 'POST',
+        body: new URLSearchParams({ question })
+      })
+      .then(() => {
+        alert('Thank you for the questions');
+        form.reset();
+      })
+      .catch(() => {
+        alert('Error');
+      });
+    });
+  </script>
 </section>
 </div>
 <script>
