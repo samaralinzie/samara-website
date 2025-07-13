@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<audio autoplay loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<div style="background-color: #fce4ec; padding: 10px; text-align: center;">
+  Template Source: 
+  <a href="https://github.com/StartBootstrap/startbootstrap-resume" target="_blank">
+    StartBootstrap Resume on GitHub
+  </a>
+</div>
+  <script>
+    // This JS runs only on the index page
+    alert("Welcome to my website!");
+  </script>
+    <!-- Subtle Volume Reminder -->
+<div style="
+  padding: 8px 0;
+  text-align: center;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 1.05rem;
+  color: hotpink;
+  font-weight: 600;
+  margin-top: 30px;
+">
+  Turn up your volume for max experience!
+</div>
+
+<!-- Ask Samara Box -->
+<div style="max-width: 500px; margin: 10px auto 0 auto; text-align: center; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+  <h3 style="margin-bottom: 15px;">Ask Samara!</h3>
+  <input type="text" id="questionInput" placeholder="Ask me something..." style="padding: 10px; width: 100%; border-radius: 6px; border: 1px solid #ccc;">
+  <br><br>
+  <button onclick="answerQuestion()" style="padding: 10px 20px; background-color: pink; color: white; border: none; border-radius: 6px; cursor: pointer; width: 100%;">Ask</button>
+  <p id="answerOutput" style="margin-top: 15px; font-weight: bold; color: #444;"></p>
+</div>
+  </div>
+</section>
+</div>
+<script>
+  function answerQuestion() {
+    const q = document.getElementById("questionInput").value.toLowerCase();
+    const a = document.getElementById("answerOutput");
+
+    if (q.includes("hobby")) {
+      a.textContent = "I love watching anime!";
+    } else if (q.includes("food")) {
+      a.textContent = "Sushi all the way!";
+    } else if (q.includes("goal") || q.includes("dream")) {
+      a.textContent = "I want to become a creative front-end developer!";
+    } else if (q.includes("school") || q.includes("uni") || q.includes("college")|| q.includes("study")) {
+      a.textContent = "I'm currently studying at Tokyo International University.";
+    } else if (q.includes("old") || q.includes("age")) {
+      a.textContent = "I am 19 years old.";
+    } else if (q.includes("favorite") || q.includes("color")) {
+      a.textContent = "My favorite color is purple!";
+    } else if (q.includes ("name") || q.includes("who are you") || q.includes("your name")) {
+      a.textContent = "My name is Samara Linzie.";
+    } else if (q.includes ("major") || q.includes("what do you study") || q.includes("what is your major")) {
+      a.textContent = "I am majoring in Digital Business and Innovation";
+    } else if (q.trim() === "") {
+      a.textContent = "Type something first!";
+    } else {
+      a.textContent = "Sorry, I don't have an answer for that. Try asking about my hobbies, favorite food, goals, or school!";
+    }
+  }
+</script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SAMARA'S SITE</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">SAMARA LINZIE SETHIONO</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about" style="padding-top: 10px; margin-top: 0;">
+                <div class="resume-section-content" style="margin-top: 0; padding-top: 0;">
+                    <h1 class="mb-0">
+                        Samara
+                        <span class="text-primary">Linzie</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        TOKYO INTERNATIONAL UNIVERSITY 
+                        <a href="mailto:name@email.com">s24229585@al.tiu.ac.jp</a>
+                    </div>
+                    <p class="lead mb-5"> Hi nice to meet you, my name is Samara Linzie and I come from Indonesia. I am currently 19 years old studying at Tokyo International University. </p>
+                    <div class="social-icons">
+                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">LC upcoming intern</h3>
+                            <div class="subheading mb-3">Tokyo International University</div>
+                            <p>I am a foreign student at Tokyo International University majoring in Digital Business and Innovation and I became part of the Learning Commons (organization) intern in the university.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">July 2021 - June 2024</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Waitress</h3>
+                            <div class="subheading mb-3">Cheskee</div>
+                            <p>Cheskee is a food and beverage company in Indonesia, I got the opportunity to work with them as part of my high school project back in 2024.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">January 2024 - January 2024</span></div>
+                    </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Cita Hati Christian School</h3>
+                            <div class="subheading mb-3">High School</div>
+                            <div>IBcourse, IGCSE, Cambridge</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">July 2021 - June 2024</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Tokyo International University</h3>
+                            <div class="subheading mb-3">Digital Business and Innovation</div>
+                            <p>GPA: 3.4</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">September 2024 - July 2028</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Skills-->
+            <section class="resume-section" id="skills">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Skills</h2>
+                    <div class="subheading mb-3">Waitress</div>
+                    </ul>
+                    <div class="subheading mb-3">Work</div>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Barista
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                           Serving
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Cooking assistant
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Interests-->
+            <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Interests</h2>
+                    <p>I enjoyed doing Art, like Painting, Drawing, Recording Videos, and Photography.</p>
+                    <p class="mb-0">I love money, which is one of the reason why I choose DBI as my major rather than Art major.</p>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Awards-->
+            <section class="resume-section" id="awards">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Awards & Certifications</h2>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            English Proficiency Award
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                           Admirable Character Award
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                           
+                           Art Award
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                         
+                            Student Council Participation Award
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <div style="background-color: #fce4ec; padding: 10px; text-align: center;">
+    </body>
+    <!-- Main Footer -->
+<footer class="main-footer" style="text-align: center;">
+  <p>24229585 - SAMARA LINZIE</p>
+</footer>
+
+
+
+
+
+
