@@ -94,9 +94,9 @@
     } else if (lower.includes("name") || lower.includes("who are you") || lower.includes("your name")) {
       answerOutput.textContent = "My name is Samara Linzie.";
     } else if (lower.includes("major") || lower.includes("what do you study") || lower.includes("what is your major")) {
-      answerOutput.textContent = "I am majoring in International Relations.";
+      answerOutput.textContent = "I am majoring in Digital Business and Innovation.";
     } else {
-      answerOutput.textContent = "That's a great question!";
+      answerOutput.textContent = "hmm I currently don't have the answer you asked for, why don't you ask my age, hobby, or goals instead!";
     }
 
     // Send to Google Sheets
@@ -105,10 +105,10 @@
       body: new URLSearchParams({ question: q })
     })
     .then(() => {
-      console.log('Question submitted.');
+      console.log('Thanks for the question');
     })
     .catch(() => {
-      alert('There was a problem saving your question.');
+      alert('Uh oh don't mind this hehe');
     });
 
     form.reset();
